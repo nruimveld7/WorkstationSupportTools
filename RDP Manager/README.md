@@ -19,5 +19,6 @@ Disable Remote Desktop on a workstation after a support session so the device re
 - Suitable for wrapping in a scheduled task or RMM action that triggers after a support window closes.
 
 ## Installer build
+- Requires Inno Setup 6 (`ISCC.exe`) on PATH; `Build.ps1` will stop with an error if it cannot find it.
 - Run `Build.ps1` in this folder to generate an installer (`Output\RDPManagerInstaller.exe`) using Inno Setup.
-- The installer creates `{sd}\RDPManager\RDPManager.bat` and registers a nightly Task Scheduler entry at midnight under `SYSTEM` with highest privileges.
+- The installer creates `{sd}\RDPManager\RDPManager.bat`, registers a nightly Task Scheduler entry at midnight under `SYSTEM` with highest privileges, and the uninstaller removes that task.

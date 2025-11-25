@@ -31,7 +31,7 @@ Operational scripts and utilities for administering Windows workstations (Window
 ## Building installers
 
 - Each tool folder includes an Inno Setup definition (`*.iss`) and a `Build.ps1` that locates `ISCC.exe` (from PATH or common install locations) and builds a standalone installer into `Output/`.
-- Installers create a folder on the system drive matching the script name (e.g., `{sd}\RDPManager`) and place the batch file inside it, then register a daily Task Scheduler job at midnight running under `SYSTEM` with highest privileges.
+- Installers create a folder on the system drive matching the script name (e.g., `{sd}\RDPManager`) and place the batch file inside it, then register a daily Task Scheduler job at midnight running under `SYSTEM` with highest privileges; uninstall removes the scheduled task.
 - Building requires Inno Setup 6; the build script searches PATH, then common install directories (e.g., `C:\Program Files (x86)\Inno Setup 6\ISCC.exe`).
 
 ## Repository layout

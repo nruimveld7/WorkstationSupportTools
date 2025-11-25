@@ -21,5 +21,6 @@ Stop and disable UltraVNC services after a support session so unattended VNC acc
 - Pair with scheduling or RMM automation that runs after an authorized session ends to ensure UltraVNC remains off.
 
 ## Installer build
+- Requires Inno Setup 6 (`ISCC.exe`) on PATH; `Build.ps1` will stop with an error if it cannot find it.
 - Run `Build.ps1` in this folder to generate an installer (`Output\UltraVNCManagerInstaller.exe`) using Inno Setup.
-- The installer creates `{sd}\UltraVNCManager\UltraVNCManager.bat` and registers a nightly Task Scheduler entry at midnight under `SYSTEM` with highest privileges.
+- The installer creates `{sd}\UltraVNCManager\UltraVNCManager.bat`, registers a nightly Task Scheduler entry at midnight under `SYSTEM` with highest privileges, and the uninstaller removes that task.
